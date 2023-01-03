@@ -8,10 +8,10 @@ type Query {
 
 type Item {
   name: String!
-  category: Integer 
+  category: Int
   description: String 
-  available: Integer
+  available: Int
   amount: Float 
-  status: Integer
+  status: Int
 }
 
