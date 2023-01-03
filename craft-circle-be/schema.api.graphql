@@ -1,0 +1,17 @@
+schema {
+  query: Query
+}
+
+type Query {
+  getItem(itemId: String): Item!
+}
+
+type Item {
+  name: String!
+  category: Integer 
+  description: String 
+  available: Integer
+  amount: Float 
+  status: Integer
+}
+
