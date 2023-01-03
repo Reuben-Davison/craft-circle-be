@@ -1,11 +1,19 @@
 service: craft-circle-be
-
 frameworkVersion: '3'
 
 provider:
   name: aws
-  runtime: nodejs14.x
+  runtime: nodejs16.x
+  region: us-west-2
 
+plugins:
+  - serverless-appsync-plugin
+
+custom:
+  appSync:
+    - ${file(serverless.appsync-api.yml)}
+    
 functions:
   hello:
     handler: handler.hello
+
