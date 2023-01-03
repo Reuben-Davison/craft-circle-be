@@ -1,0 +1,18 @@
+name: craft_circle_be
+schema: schema.api.graphql
+authenticationType: AWS_IAM
+
+mappingTemplatesLocation: mapping-templates
+mappingTemplates: 
+  -type: Query
+  field: getItem
+  datasource: itemTable
+
+
+datasources: 
+  - type: None
+    name: none
+  - type: AMAZON_DYNAMODB
+    name: itemTable
+    config:
+      tableName: !Ref ItemTable
