@@ -9,7 +9,7 @@ type Query {
 }
 
 type Mutation {
-    deleteItem(itemId: String!): Boolean!
+    deleteItem(itemId: String!): Item
 }
 
 type Item {
