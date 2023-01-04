@@ -3,14 +3,10 @@
     "operation" : "UpdateItem",
     "key": {
         "itemId": $util.dynamodb.toDynamoDBJson($context.arguments.itemId)
-    }
+    },
     "update" : {
-        "expression" : "SET name = :name, 
-                            category = :category, 
-                            description = :description, 
-                            available = :available,
-                            amount = :amount,
-                            status = :status",
+        "expression" : "SET #itemName = :name, category = :category, description = :description, available = :available, amount = :amount, #itemStatus = :status",
+        "expressionNames": {"#itemName" : "name", "#itemStatus" : "status"},
         "expressionValues": {
             ":name" : $util.dynamodb.toDynamoDBJson($context.arguments.name),
             ":category" : $util.dynamodb.toDynamoDBJson($context.arguments.category),
