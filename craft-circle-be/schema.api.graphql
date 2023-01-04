@@ -10,6 +10,15 @@ type Query {
 
 type Mutation {
     deleteItem(itemId: String!): Item
+    editItem(
+        itemId: String!,
+        name: String,
+        category: String,
+        description: String,
+        available: Boolean,
+        amount: Float,
+        status: String
+        ): Item!
 }
 
 type Item {
