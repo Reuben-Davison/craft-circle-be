@@ -1,17 +1,28 @@
 schema {
-  query: Query
+    query: Query
+    mutation: Mutation
 }
 
 type Query {
-  getItem(itemId: String): Item!
+    getItem(itemId: String): Item!
+    getAllItems: ItemsPage! 
+}
+
+type Mutation {
+    deleteItem(itemId: String!): Boolean!
 }
 
 type Item {
-  name: String!
-  category: Int
-  description: String 
-  available: Int
-  amount: Float 
-  status: Int
+    itemId: String!
+    name: String!
+    category: String
+    description: String 
+    available: Boolean 
+    amount: Float 
+    status: String
 }
 
+type ItemsPage {
+    items: [Item]! 
+    # nextToken: String 
+}

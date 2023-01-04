@@ -4,14 +4,22 @@ authenticationType: AWS_IAM
 
 mappingTemplatesLocation: mapping-templates
 mappingTemplates: 
-  -type: Query
-  field: getItem
-  datasource: itemTable
+  - type: Query
+    field: getItem
+    dataSource: itemTable
+  - type: Query 
+    field: getAllItems
+    dataSource: itemTable
+
+  - type: Mutation
+    field: deleteItem
+    dataSource: itemTable
 
 
-datasources: 
-  - type: None
-    name: none
+dataSources: 
+  - type: NONE
+    name: None
+
   - type: AMAZON_DYNAMODB
     name: itemTable
     config:
