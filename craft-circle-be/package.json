@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "-": "^0.0.1",
+    "save-dev": "^0.0.1-security",
     "serverless-appsync-plugin": "^1.14.0",
+    "serverless-iam-roles-per-function": "^3.2.0",
     "uuid": "^9.0.0"
   }
 }

@@ -9,6 +9,7 @@ provider:
 
 plugins:
   - serverless-appsync-plugin
+  - serverless-iam-roles-per-function
 
 custom:
   appSync:
@@ -17,6 +18,14 @@ custom:
 functions:
   getItem: 
     handler: functions/create-item.handler
+    environment: 
+      ITEM_TABLE: !Ref ItemTable
+    iamRoleStatements:
+      - Effect: Allow
+        Action: dynamodb:PutItem
+        Resource: !GetAtt ItemTable.Arn
+
+
   hello:
     handler: handler.hello
 
