@@ -1,0 +1,15 @@
+{
+    "version" : "2017-02-28",
+    "operation" : "PutItem",
+    "key": {
+        "itemId": 
+    },
+    "attributeValues" : {
+        "name" : $util.dynamodb.toDynamoDBJson($context.arguments.name),
+        "category" : $util.dynamodb.toDynamoDBJson($context.arguments.category),
+        "description" : $util.dynamodb.toDynamoDBJson($context.arguments.description),
+        "available" : $util.dynamodb.toDynamoDBJson($context.arguments.available),
+        "amount" : $util.dynamodb.toDynamoDBJson($context.arguments.amount),
+        "status" : $util.dynamodb.toDynamoDBJson($context.arguments.status),
+    }
+}

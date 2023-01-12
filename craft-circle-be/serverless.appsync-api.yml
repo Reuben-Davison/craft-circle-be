@@ -17,11 +17,21 @@ mappingTemplates:
   - type: Mutation
     field: editItem
     dataSource: itemTable
+  - type: Mutation
+    field: createItem
+    dataSource: createItemFunction
+    request: false
+    response: false
 
 
 dataSources: 
   - type: NONE
     name: None
+
+  - type: AWS_LAMBDA
+    name: createItemFunction
+    config:
+      functionName: createItem
 
   - type: AMAZON_DYNAMODB
     name: itemTable

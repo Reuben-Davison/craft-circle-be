@@ -19,6 +19,14 @@ type Mutation {
         amount: Float,
         status: String
         ): Item!
+    createItem(
+        name: String,
+        category: String,
+        description: String,
+        available: Boolean,
+        amount: Float,
+        status: String
+        ): Item!
 }
 
 type Item {
